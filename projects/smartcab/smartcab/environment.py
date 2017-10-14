@@ -74,7 +74,7 @@ class Environment(object):
             self.create_agent(DummyAgent)
 
         # Primary agent and associated parameters
-        self.primary_agent = None  # to be set explicitly
+        self.primary_agent = Agent  # to be set explicitly
         self.enforce_deadline = False
 
         # Trial data (updated at the end of each trial)
