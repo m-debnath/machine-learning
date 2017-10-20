@@ -2,6 +2,7 @@
 # Suppress matplotlib user warnings
 # Necessary for newer version of matplotlib
 import warnings
+import datetime
 
 warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
 ###########################################
@@ -105,7 +106,7 @@ def plot_trials(csv):
     ax.set_title("10-Trial Rolling Average Reward per Action")
     ax.set_ylabel("Reward per Action")
     ax.set_xlabel("Trial Number")
-    ax.set_xlim((10, len(training_data)))
+    ax.set_xlim((10, len(training_data))) # change
 
     # Create plot-specific data
     step = training_data[['trial', 'average_reward']].dropna()
@@ -203,4 +204,6 @@ def plot_trials(csv):
         ax.text(0.36, 0.30, "Simulation completed\nwith testing disabled.", fontsize=20, ha='center', style='italic')
 
     plt.tight_layout()
-    plt.show()
+    # plt.show()
+    filename = "logs/visuals_" + datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ") + ".png"
+    plt.savefig(filename)
