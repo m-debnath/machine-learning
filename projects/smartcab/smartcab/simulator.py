@@ -178,6 +178,11 @@ class Simulator(object):
                             self.pause()
 
                     # Update environment
+                    # if self.env.t < 175:
+                    #     self.update_delay = 0.01
+                    # else:
+                    #     self.update_delay = 2.0
+                    # self.frame_delay = max(1, int(self.update_delay * 1000))
                     if self.current_time - self.last_updated >= self.update_delay:
                         self.env.step()
                         self.last_updated = self.current_time
