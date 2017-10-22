@@ -204,6 +204,6 @@ def plot_trials(csv):
         ax.text(0.36, 0.30, "Simulation completed\nwith testing disabled.", fontsize=20, ha='center', style='italic')
 
     plt.tight_layout()
-    # plt.show()
-    filename = "logs/visuals_" + datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ") + ".png"
-    plt.savefig(filename)
+    plt.show()
+    # filename = "logs/visuals_" + datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ") + ".png"
+    # plt.savefig(filename)
