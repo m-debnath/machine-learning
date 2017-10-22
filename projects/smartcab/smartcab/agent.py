@@ -9,7 +9,7 @@ class LearningAgent(Agent):
     """ An agent that learns to drive in the Smartcab world.
         This is the object you will be modifying. """
 
-    def __init__(self, env, learning=True, epsilon=1.0, alpha=0.6, min_alpha=0.2, gamma=0.0):
+    def __init__(self, env, learning=True, epsilon=1.0, alpha=0.6, min_alpha=0.2):
         super(LearningAgent, self).__init__(env)  # Set the agent in the environment
         print super.__str__(self)
         self.planner = RoutePlanner(self.env, self)  # Create a route planner
@@ -26,7 +26,6 @@ class LearningAgent(Agent):
         ###########
         # Set any additional class parameters as needed
         self.t = 0
-        self.gamma = gamma
         self.min_alpha = min_alpha
 
     def reset(self, destination=None, testing=False):
